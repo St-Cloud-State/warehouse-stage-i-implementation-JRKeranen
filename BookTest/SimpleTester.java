@@ -4,13 +4,13 @@ import java.io.*;
 public class SimpleTester {
   
   public static void main(String[] s) {
-     Book b1 = new Book("qq", "ww", "b1");
-     Book b2 = new Book("ee", "rr", "b2");
-     Catalog catalog = Catalog.instance();
-     catalog.insertBook(b1);
-     catalog.insertBook(b2);
-     Member m1 = new Member("m1"); 
-     Member m2 = new Member("m2");
+     Product b1 = new Product("qq", "ww", "b1");
+     Product b2 = new Product("ee", "rr", "b2");
+     ProductList ProductList = ProductList.instance();
+     ProductList.insertBook(b1);
+     ProductList.insertBook(b2);
+     Client m1 = new Client("m1"); 
+     Client m2 = new Client("m2");
      System.out.println(b1.getBorrower() + " should be null");
      b1.issue(m1); 
      System.out.println(b1.getBorrower() + " should be m1");
@@ -20,10 +20,10 @@ public class SimpleTester {
      System.out.println(b1.returnBook()); 
      System.out.println(b1.getBorrower() + " should be null");
      System.out.println(b1.getDueDate() + " should be null");
-     Iterator books = catalog.getBooks();
-     System.out.println("List of books");
-     while (books.hasNext()){
-       System.out.println(books.next());
+     Iterator products = ProductList.getBooks();
+     System.out.println("List of products");
+     while (products.hasNext()){
+       System.out.println(products.next());
      }
   }
 }
