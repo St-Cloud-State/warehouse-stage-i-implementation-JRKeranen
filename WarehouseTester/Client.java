@@ -33,7 +33,6 @@ public class Client{
       return null;
     }
   }
-
   public Iterator getWishItems(){
     return wishList.iterator();
  }
